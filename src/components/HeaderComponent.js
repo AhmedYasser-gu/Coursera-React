@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 
+// Note : Bootstrap 5 does not support Jumbotron anymore , so I added div with class name jumbotron then style it :D
 class Header extends Component {
   render() {
     return (
