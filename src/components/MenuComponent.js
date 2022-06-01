@@ -6,7 +6,7 @@ import { Card, CardImg, CardImgOverlay,
         return (
             <Card
                 onClick={() => onClick(dish.id)}>
-                <CardImg width="100%" src={dish.image} alt={dish.name} />
+                <CardImg width="80%" src={dish.image} alt={dish.name} />
                 <CardImgOverlay>
                     <CardTitle>{dish.name}</CardTitle>
                 </CardImgOverlay>
