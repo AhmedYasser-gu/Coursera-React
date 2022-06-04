@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 function RenderLeader({ leader }) {
     return(
-        <div key={leader.id} className="col-11 mt-4">
+        <div key={leader.id} className="col-12 mt-5">
             <Media tag="">
                 <Media left middle>
                     <Media object src={leader.image} alt={leader.name} />
                 </Media>
-                <Media body className="ml-3">
+                <Media body className="ml-4">
                     <Media heading>{leader.name}</Media>
                     <p>{leader.description}</p>
                 </Media>
