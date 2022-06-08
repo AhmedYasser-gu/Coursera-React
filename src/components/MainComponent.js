@@ -24,11 +24,11 @@ const mapStateToProps = state => {
 
 
 class Main extends Component {
-
+/*
   constructor(props) {
     super(props);
   }
-
+*/
   render() {
 
     const HomePage = () => {
@@ -56,8 +56,6 @@ class Main extends Component {
 
           dish={this.props.dishes.filter((dish) => dish.id === parseInt(match.params.dishId, 10))[0]}
           comments={this.props.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId, 10))}
-
-
         />
       );
     };
