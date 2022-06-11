@@ -51,14 +51,14 @@ class CommentForm extends Component {
                 </Button>
 
 
-                {/* commentform  Modal */}
+               
                 <Modal isOpen={this.state.isCommentFormModalOpen} toggle={this.toggleCommentFormModal} >
                     <ModalHeader toggle={this.toggleCommentFormModal}> Submit Comment </ModalHeader>
                     <ModalBody>
 
                         <LocalForm onSubmit={(values) => this.handleCommentFormSubmit(values)}>
 
-                            {/* rating */}
+                           
                             <Row className="form-group">
                                 <Label htmlFor="rating" md={12} >Rating</Label>
                                 <Col md={12}>
@@ -89,7 +89,7 @@ class CommentForm extends Component {
                             </Row>
 
 
-                            {/* author */}
+                       
                             <Row className="form-group">
                                 <Label htmlFor="author" md={12}> Your Name </Label>
                                 <Col md={12}>
@@ -116,7 +116,7 @@ class CommentForm extends Component {
 
 
 
-                            {/* comment */}
+                           
                             <Row className="form-group">
                                 <Label htmlFor="comment" md={12}>Comment</Label>
                                 <Col md={12}>
@@ -139,7 +139,7 @@ class CommentForm extends Component {
 
                             </Row>
 
-                            {/* submit button */}
+                          
                             <Row className="form-group">
                                 <Col>
                                     <Button type="submit" color="primary">
@@ -158,10 +158,6 @@ class CommentForm extends Component {
         );
     }
 }
-
-/**........................ comment component ends ................................................. */
-
-
 
 
 
