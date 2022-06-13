@@ -10,7 +10,7 @@ import { Control, LocalForm, Errors } from 'react-redux-form';
 
 
 
-const required = (val) => val && val.length; 
+const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => (val) && (val.length >= len);
 
@@ -41,6 +41,11 @@ class CommentForm extends Component {
             isCommentFormModalOpen: !this.state.isCommentFormModalOpen
         });
     }
+ handleSubmit(values){
+     this.toggleModal();
+     this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+ }
+
 
 
     render() {
@@ -51,14 +56,14 @@ class CommentForm extends Component {
                 </Button>
 
 
-               
+
                 <Modal isOpen={this.state.isCommentFormModalOpen} toggle={this.toggleCommentFormModal} >
                     <ModalHeader toggle={this.toggleCommentFormModal}> Submit Comment </ModalHeader>
                     <ModalBody>
 
                         <LocalForm onSubmit={(values) => this.handleCommentFormSubmit(values)}>
 
-                           
+
                             <Row className="form-group">
                                 <Label htmlFor="rating" md={12} >Rating</Label>
                                 <Col md={12}>
@@ -89,7 +94,7 @@ class CommentForm extends Component {
                             </Row>
 
 
-                       
+
                             <Row className="form-group">
                                 <Label htmlFor="author" md={12}> Your Name </Label>
                                 <Col md={12}>
@@ -116,7 +121,7 @@ class CommentForm extends Component {
 
 
 
-                           
+
                             <Row className="form-group">
                                 <Label htmlFor="comment" md={12}>Comment</Label>
                                 <Col md={12}>
@@ -139,7 +144,7 @@ class CommentForm extends Component {
 
                             </Row>
 
-                          
+
                             <Row className="form-group">
                                 <Col>
                                     <Button type="submit" color="primary">
@@ -185,7 +190,7 @@ function RenderDish({ dish }) {
     }
 }
 
-function RenderComments({ dish, comments }) {
+function RenderComments({comments, addComment, dishId}) {
     if (comments == null) {
         return (<div></div>)
     }
@@ -212,7 +217,7 @@ function RenderComments({ dish, comments }) {
             <ul className='list-unstyled'>
                 {cmnts}
             </ul>
-            <CommentForm dish={dish} comments={comments} />
+            <CommentForm dishId={dishId} addComment={addComment} />
         </div>
     )
 }
@@ -247,7 +252,10 @@ const DishDetail = (props) => {
 
             <div className='row'>
                 <RenderDish dish={props.dish} />
-                <RenderComments dish={props.dish} comments={props.comments} />
+                <RenderComments comments={props.comments}
+                    addComment={props.addComment}
+                    dishId={props.dish.id}
+                />
             </div>
 
 
