@@ -9,8 +9,10 @@
     "autoprefixer": "10.4.5",
     "bootstrap": "^5.2.0-beta1",
     "bootstrap-social": "^5.1.1",
+    "cross-fetch": "^2.1.0",
     "font-awesome": "^4.7.0",
     "react": "^18.1.0",
+    "react-animation-components": "^3.0.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",
     "react-redux": "^8.0.2",
@@ -19,6 +21,8 @@
     "react-scripts": "5.0.1",
     "reactstrap": "^9.0.3",
     "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
