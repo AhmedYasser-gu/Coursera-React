@@ -13,8 +13,6 @@ import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 
-/**........................ comment component ends ................................................. */
-//// validators
 const required = (val) => val && val.length; //value > 0
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => (val) && (val.length >= len);
@@ -166,9 +164,6 @@ class CommentForm extends Component {
     }
 }
 
-/**........................ comment component ends ................................................. */
-
-
 
 
 
@@ -178,7 +173,7 @@ class CommentForm extends Component {
     function RenderDish({dish}) {
         if (dish != null) {
             return (
-                <div className='col-12 col-md-5 m-1'>
+                <div className='col-11 col-md-5 m-1'>
                     <FadeTransform
                         in
                         transformProps={{
